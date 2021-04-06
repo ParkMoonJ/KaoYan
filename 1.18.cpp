@@ -1,8 +1,9 @@
 #include <iostream>
-#include <algorithm>
 using namespace std;
 
-typedef enum {A, B, C, D, E} SchoolNmae;
+#define MAXSIZE 100
+
+typedef enum {A, B, C, D, E} SchoolName;
 typedef enum {FEMALE, MALE} Gender;
 
 typedef struct {
@@ -19,8 +20,16 @@ typedef struct {
     int totalSum;
 } Sum;
 
-int main() {
-    while 
-    cin >> item[i].name >> item[i].gender >> item[i].score >> item[i].point;
+for (int i = 0; i < MAXSIZE; ++i) {
+    result[report[i].school].totalSum += report[i].point;
+    switch (report[i].gender) {
+        case 0:
+            result[report[i].school].femaleSum += report[i].point;
+        case 1:
+            result[report[i].school].maleSum += report[i].point;
+    }
+}
 
+for (int i = A; i < E; ++i) {
+    cout << ...
 }
