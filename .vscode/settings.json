@@ -3,6 +3,10 @@
         "iostream": "cpp",
         "ostream": "cpp",
         "*.rmd": "markdown",
-        "istream": "cpp"
+        "istream": "cpp",
+        "__locale": "cpp",
+        "__string": "cpp",
+        "string": "cpp",
+        "string_view": "cpp"
     }
 }

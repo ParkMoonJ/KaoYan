@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include <cstdio>
 using namespace std;
 #define MAXSIZE 100
 
@@ -35,34 +36,39 @@ bool Pop(Stack &S, char x) {
     return true;
 }
 
-bool Bracket(char *a) {
+bool Bracket(char *a, int i) {
     char x;
 
     InitStack(S);
-    for (int i = 0; a[i]; i++) {
-        if (a[i] == '(' || a[i] == '[' || a[i] == '{') {
-            Push(S, a[i]);
-        } else if (a[i] == ']') {
+    for (int j = 0; j == i; j++)
+    {
+        if (a[j] == '(' || a[j] == '[' || a[j] == '{') {
+            Push(S, a[j]);
+        } else if (a[j] == ']') {
             Pop(S, x);
             if (x != '[') {
                 return false;
             }
-        } else if (a[i] == ')') {
+        } else if (a[j] == ')') {
             Pop(S, x);
             if (x != '(') {
                 return false;
             }
-        } else if (a[i] == '}') {
+        } else if (a[j] == '}') {
             Pop(S, x);
             if (x != '{') {
                 return false;
             }
         }
     }
+    return true;
 }
 
 int main() {
-    int n;
-    cin.getline(a, MAXSIZE);
-    return Bracket(a);
+    int i = 0;
+    while ((a[i] = cin.get()) != '\n') {
+        ++i;
+    }
+    cout << Bracket(a, i - 1);
+    return 0;
 }
