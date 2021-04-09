@@ -19,7 +19,11 @@ void ClearStack(Stack &S) {
 }
 
 bool StackEmpty(Stack S) {
-    return !(S.top + 1);
+    if (S.top == -1) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 int StackLength(Stack S) {
