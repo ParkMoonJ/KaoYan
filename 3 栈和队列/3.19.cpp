@@ -1,6 +1,4 @@
 #include <iostream>
-#include <cstring>
-#include <cstdio>
 using namespace std;
 #define MAXSIZE 100
 
@@ -8,12 +6,10 @@ struct Stack{
     char data[MAXSIZE];
     int top;
 } S;
-
 char a[MAXSIZE];
 
 void InitStack(Stack &S) {
-    char data[MAXSIZE] = {};
-    int top = -1;
+    S.top = -1;
 }
 
 bool Push(Stack &S, char x) {
@@ -36,25 +32,32 @@ bool Pop(Stack &S, char x) {
     return true;
 }
 
-bool Bracket(char *a, int i) {
+bool Bracket(char *a) {
     char x;
 
     InitStack(S);
-    for (int j = 0; j == i; j++)
+    for (int i = 0; a[i]; i++)
     {
-        if (a[j] == '(' || a[j] == '[' || a[j] == '{') {
-            Push(S, a[j]);
-        } else if (a[j] == ']') {
+        if (a[i] == '(' || a[i] == '[' || a[i] == '{') {
+            Push(S, a[i]);
+            cout << i << ':' << a[i] << endl;
+        }
+        else if (a[i] == ']')
+        {
             Pop(S, x);
             if (x != '[') {
                 return false;
             }
-        } else if (a[j] == ')') {
+        }
+        else if (a[i] == ')')
+        {
             Pop(S, x);
             if (x != '(') {
                 return false;
             }
-        } else if (a[j] == '}') {
+        }
+        else if (a[i] == '}')
+        {
             Pop(S, x);
             if (x != '{') {
                 return false;
@@ -65,10 +68,7 @@ bool Bracket(char *a, int i) {
 }
 
 int main() {
-    int i = 0;
-    while ((a[i] = cin.get()) != '\n') {
-        ++i;
-    }
-    cout << Bracket(a, i - 1);
+    cin.getline(a, MAXSIZE);
+    cout << Bracket(a);
     return 0;
 }
