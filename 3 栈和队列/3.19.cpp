@@ -32,43 +32,60 @@ bool Pop(Stack &S, char x) {
     return true;
 }
 
-bool Bracket(char *a) {
-    char x;
-
-    InitStack(S);
-    for (int i = 0; a[i]; i++)
-    {
-        if (a[i] == '(' || a[i] == '[' || a[i] == '{') {
-            Push(S, a[i]);
-            cout << i << ':' << a[i] << endl;
-        }
-        else if (a[i] == ']')
-        {
-            Pop(S, x);
-            if (x != '[') {
-                return false;
-            }
-        }
-        else if (a[i] == ')')
-        {
-            Pop(S, x);
-            if (x != '(') {
-                return false;
-            }
-        }
-        else if (a[i] == '}')
-        {
-            Pop(S, x);
-            if (x != '{') {
-                return false;
-            }
-        }
+bool StackEmpty(Stack S) {
+    if (S.top == -1) {
+        return true;
+    } else {
+        return false;
     }
-    return true;
+}
+
+bool BracketsCheck(char *str) {
+    Stack S;
+    char e;
+    InitStack(S);
+    int i = 0;
+    while (str[i] != '\0') {
+        switch(str[i]) {
+            case '(':
+                Push(S, '(');
+                break;
+            case '[':
+                Push(S, '[');
+                break;
+            case '{':
+                Push(S, '{');
+                break;
+            case ')':
+                Pop(S, e);
+                if (e != '(') {
+                    return false;
+                }
+                break;
+            case ']':
+                Pop(S, e);
+                if (e != '[') {
+                    return false;
+                }
+                break;
+            case '}':
+                Pop(S, e);
+                if (e != '{') {
+                    return false;
+                }
+                break;
+        }
+        i++;
+    }
+    if(!StackEmpty(S)) {
+        return false;
+    } else {
+        return true;
+    }
 }
 
 int main() {
     cin.getline(a, MAXSIZE);
-    cout << Bracket(a);
+    cout << BracketsCheck(a);
     return 0;
 }
