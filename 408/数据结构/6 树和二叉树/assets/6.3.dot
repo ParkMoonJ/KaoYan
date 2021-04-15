@@ -1,29 +1,109 @@
-graph 6.3 {
-    subgraph A {
-        subgraph Aa{
-            Aa1[label = "", shape = circle]
-            Aa2[label = "", shape = circle]
-            Aa3[label = "", shape = circle]
+// dot BiTree.dot | gvpr -c -f BiTree.gvpr | neato -n -Tpng -o BiTree.png
 
+graph 6.3 {
+    node[shape = circle]
+    subgraph cluster_A {
+        rank = same
+        label = "具有3个节点的树"
+        node[label = ""]       
+        subgraph cluster_Aa{
+            label = "(1)"
             Aa1--Aa2--Aa3
         }
-        subgraph Ab{
-            Ab1[label = "", shape = circle]
-            Ab2[label = "", shape = circle]
-            Ab3[label = "", shape = circle]
-            
-            Ab1--Ab2
-            Ab1--Ab3
+        subgraph cluster_Ab{
+            label = "(2)"
+            Ab1--{Ab2 Ab3}
         }
     }
-    subgraph B {
-        subgraph Ba{
-            Ba1[label = "", shape = circle]
-            Ba1[label = "", shape = circle]
-            Ba2[label = "", shape = circle]
-            Ba3[label = "", shape = circle]
-
-            Ba1--Ba2--Ba3
+    subgraph cluster_B {
+        label = "具有3个节点的二叉树"
+        rankdir = LR
+        subgraph cluster_Ba{
+            label = "(1)"
+            Ba1[label = 1]
+            Ba2[label = 2]
+            Ba3[label = 3]
+            Ba4[label = 4]
+            Ba5[label = 5]
+            Ba6[label = 6]
+            Ba7[label = 7]
+            Ba1--Ba2
+            Ba1--Ba3[style=invis]
+            Ba2--Ba4
+            Ba2--Ba5[style=invis]
+            Ba3--Ba6[style=invis]
+            Ba3--Ba7[style=invis]
+            Ba3[style=invis]
+            Ba5[style=invis]
+            Ba6[style=invis]
+            Ba7[style=invis]
+        }
+        subgraph cluster_Bb{
+            label = "(2)"
+            Bb1[label = 1]
+            Bb2[label = 2]
+            Bb3[label = 3]
+            Bb4[label = 4]
+            Bb5[label = 5]
+            Bb6[label = 6]
+            Bb7[label = 7]
+            Bb1--Bb2
+            Bb1--Bb3[style=invis]
+            Bb2--Bb4[style=invis]
+            Bb2--Bb5
+            Bb3--Bb6[style=invis]
+            Bb3--Bb7[style=invis]
+            Bb3[style=invis]
+            Bb4[style=invis]
+            Bb6[style=invis]
+            Bb7[style=invis]
+        }
+        subgraph cluster_Bc{
+            label = "(3)"
+            Bc1[label = 1]
+            Bc2[label = 2]
+            Bc3[label = 3]
+            Bc1--{Bc2 Bc3}
+        }
+        subgraph cluster_Bd{
+            label = "(4)"
+            Bd1[label = 1]
+            Bd2[label = 2]
+            Bd3[label = 3]
+            Bd4[label = 4]
+            Bd5[label = 5]
+            Bd6[label = 6]
+            Bd7[label = 7]
+            Bd1--Bd2[style=invis]
+            Bd1--Bd3
+            Bd2--Bd4[style=invis]
+            Bd2--Bd5[style=invis]
+            Bd3--Bd6
+            Bd3--Bd7[style=invis]
+            Bd2[style=invis]
+            Bd4[style=invis]
+            Bd5[style=invis]
+            Bd7[style=invis]
+        }
+        subgraph cluster_Be{
+            label = "(5)"
+            Be1[label = 1]
+            Be2[label = 2]
+            Be3[label = 3]
+            Be4[label = 4]
+            Be5[label = 5]
+            Be6[label = 6]
+            Be7[label = 7]
+            Be1--Be2[style=invis]
+            Be1--Be3
+            Be2--Be4[style=invis]
+            Be2--Be5[style=invis]
+            Be3--Be6[style=invis]
+            Be3--Be7
+            Be2[style=invis]
+            Be4[style=invis]
+            Be5[style=invis]
+            Be6[style=invis]
         }
     }
 }
