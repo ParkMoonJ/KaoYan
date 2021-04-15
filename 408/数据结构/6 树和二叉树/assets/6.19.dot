@@ -1,0 +1,36 @@
+graph 6.19 {
+    splines="FALSE";
+
+    /* Entities */
+    A [shape = circle]
+    B [shape = circle]
+    C [shape = circle]
+    D [shape = circle]
+    E [shape = circle]
+    F [shape = circle]
+    G [shape = circle]
+    H [shape = circle]
+    I [shape = circle]
+    J [shape = circle]
+    K [shape = circle]
+    L [shape = circle]
+    M [shape = circle]
+    N [shape = circle]
+    
+    /* Relationships */
+    A -- B
+    A -- C
+    B -- D
+    B -- E
+    C -- F
+    C -- G
+    C -- H
+    E -- I
+    G -- J
+    G -- K
+    H -- L
+    I -- M
+    I -- N
+
+    /* Ranks */
+}

@@ -1,0 +1,29 @@
+graph 6.3 {
+    subgraph A {
+        subgraph Aa{
+            Aa1[label = "", shape = circle]
+            Aa2[label = "", shape = circle]
+            Aa3[label = "", shape = circle]
+
+            Aa1--Aa2--Aa3
+        }
+        subgraph Ab{
+            Ab1[label = "", shape = circle]
+            Ab2[label = "", shape = circle]
+            Ab3[label = "", shape = circle]
+            
+            Ab1--Ab2
+            Ab1--Ab3
+        }
+    }
+    subgraph B {
+        subgraph Ba{
+            Ba1[label = "", shape = circle]
+            Ba1[label = "", shape = circle]
+            Ba2[label = "", shape = circle]
+            Ba3[label = "", shape = circle]
+
+            Ba1--Ba2--Ba3
+        }
+    }
+}

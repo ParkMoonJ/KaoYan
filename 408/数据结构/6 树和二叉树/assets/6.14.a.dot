@@ -1,0 +1,11 @@
+graph a {
+    splines="FALSE";
+
+    /* Entities */
+    1[shape = circle]
+    
+    /* Relationships */
+    1
+
+    /* Ranks */
+}
