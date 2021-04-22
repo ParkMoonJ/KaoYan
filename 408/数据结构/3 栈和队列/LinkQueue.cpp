@@ -1,10 +1,10 @@
 #include <iostream>
 using namespace std;
 
-struct LinkNode {
+typedef struct LinkNode {
     ElemType data;
     struct LinkNode *next;
-}; // 链式队列节点
+} L; // 链式队列节点
 
 struct LinkQueue {
     LinkNode *front, *rear; // 链式队列指针
