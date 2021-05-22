@@ -1,0 +1,49 @@
+graph 4 {
+    splines="FALSE";
+
+    /* Entities */
+    1 [shape = circle]
+    2 [shape = circle]
+    3 [shape = circle]
+    4 [shape = circle]
+    5 [shape = circle]
+    6 [shape = circle]
+    7 [shape = circle]
+    8 [shape = circle]
+    9 [shape = circle]
+    10 [shape = circle]
+    11 [shape = circle]
+    12 [shape = circle]
+    13 [shape = circle]
+    14 [shape = circle]
+    15 [shape = circle]
+    
+    /* Relationships */
+    1 -- 2 [style = invis]
+    1 -- 3
+    2 -- 4 [style = invis]
+    2 -- 5 [style = invis]
+    3 -- 6 [style = invis]
+    3 -- 7
+    4 -- 8 [style = invis]
+    4 -- 9 [style = invis]
+    5 -- 10 [style = invis]
+    5 -- 11 [style = invis]
+    6 -- 12 [style = invis]
+    6 -- 13 [style = invis]
+    7 -- 14 [style = invis]
+    7 -- 15
+
+    /* Ranks */
+    2 [style = invis]
+    4 [style = invis]
+    5 [style = invis]
+    6 [style = invis]
+    8 [style = invis]
+    9 [style = invis]
+    10 [style = invis]
+    11 [style = invis]
+    12 [style = invis]
+    13 [style = invis]
+    14 [style = invis]
+}
